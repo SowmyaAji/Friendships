@@ -1,6 +1,4 @@
-#run tests with python manage.py harvest
-#built using https://testdriven.io/blog/behavior-driven-development-with-django-and-aloe/
-#source code: https://github.com/testdrivenio/django-aloe-bdd
+
 Feature: Friendships
 
     Background: Set up common data
