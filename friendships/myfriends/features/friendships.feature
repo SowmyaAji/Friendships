@@ -8,12 +8,12 @@ Feature: Friendships
         And I create the following users:
 
             | id | email               | username | password  |
-            | 1  | aisiri@example.com  | aisiri   | pass&w0rd |
-            | 2  | bhaskar@example.com | bhaskar  | pass&w0rd |
+            | 1  | alice@example.com  | alice   | pass&w0rd |
+            | 2  | bob@example.com    | bob     | pass&w0rd |
             | 3  | crystal@example.com | crystal  | pass&w0rd |
     
        
-        When I log in with username "aisiri" and password "pass&w0rd"
+        When I log in with username "alice" and password "pass&w0rd"
         Then I am logged in 
     
     Scenario: A user can see a list of friends
@@ -25,20 +25,20 @@ Feature: Friendships
             | id | user1 | user2 | status   |
             | 1  | 1     | 2     | ACCEPTED |
 
-            #aisiri and bhaskar are now friends
+            #alice and bob are now friends
         
         When I get a list of friends
 
         Then I see the following response data:
 
          | id | email              | username  |
-         | 2  | bhaskar@example.com| bhaskar   |
+         | 2  | bob@example.com| bob       |
 
     Scenario: A user with no friends sees an empty list
 
         Given I empty the "Friendship" table
 
-        #aisiri has no friends.
+        #alice has no friends.
 
         When I get a list of friends
 
@@ -54,7 +54,7 @@ Feature: Friendships
         | 1  | 1     | 2     | PENDING  |
         | 2  | 1     | 3     | REJECTED |
 
-        # No one has accepted aisiri's friend requests.
+        # No one has accepted alice's friend requests.
 
         When I get a list of friends
 
@@ -63,7 +63,7 @@ Feature: Friendships
 
     Scenario: A user can request a friendship with another user
         Given I empty the "Friendship" table
-        #I request friendship with bhaskar
+        #I request friendship with bob
         When I request the following friendship:
              | user1 | user2 |
              | 1     | 2     |
