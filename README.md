@@ -2,7 +2,7 @@
 
 ##Overview
 
-App built using Django, REST API and Aloe to demonstrate the behavior driven development model and testing with Aloe
+App outlining friendships between three users, built using Django, REST API and Aloe to demonstrate the behavior driven development model and testing with Aloe
 
 
 
@@ -10,10 +10,21 @@ App built using Django, REST API and Aloe to demonstrate the behavior driven dev
 
 Git clone/ fork repository
 
-Install Pipfile
+```
+$ cd friendships
+$ pipenv shell
+$ pipenv install
 
-Run python manage.py harvest from command line
-to run the tests using Aloe on the app
+```
+
+
+To run the tests using Aloe on the app from command line:
+
+```
+python manage.py harvest 
+
+```
+
 
 
 ##Resources
